@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConversorCalculator.ConversorPage"
+             BackgroundColor="White">
+
+
+            <Grid RowDefinitions="Auto,Auto,*">
+                <!-- Top Menu -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="10" Spacing="20">
+                    <Label Text="Operations" FontSize="14"/>
+                    <Label Text="Logout" FontSize="14"/>
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLogoutTapped"/>
+                        </Label.GestureRecognizers>
+                    <Label Text="Exit" FontSize="14">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnExitTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+
+                <!-- Header -->
+                <Frame Grid.Row="1" BackgroundColor="#3B5D7A" Padding="20">
+                    <Label Text="OOP Conversor"
+                        FontSize="24"
+                        HorizontalOptions="Center"
+                        TextColor="White"
+                        FontAttributes="Bold"/>
+                </Frame>
+
+                <!-- Body -->
+                <ScrollView Grid.Row="2">
+                    <StackLayout BackgroundColor="#D3D3D3" Padding="20" Spacing="10">
+                        <!-- Entry display -->
+                        <Entry
+                            x:Name="DisplayEntry"
+                            FontSize="20"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            IsReadOnly="True"
+                            HorizontalTextAlignment="End"/>
+
+                        <!-- Keypad -->
+                        <Grid ColumnDefinitions="Auto,Auto,Auto,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="5" ColumnSpacing="5">
+                            <!-- Row 0 -->
+                            <Button Text="7" Grid.Row="0" Grid.Column="0" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="8" Grid.Row="0" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="9" Grid.Row="0" Grid.Column="2" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="DecimalToBinary" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 1 -->
+                            <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="6" Grid.Row="1" Grid.Column="2" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="DecimalToTwoComplement" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 2 -->
+                            <Button Text="1" Grid.Row="2" Grid.Column="0" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="2" Grid.Row="2" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="3" Grid.Row="2" Grid.Column="2" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="DecimalToOctal" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 3 -->
+                            <Button Text="AC" Grid.Row="3" Grid.Column="0" Clicked="OnClearClicked" StyleClass="keypad"/>
+                            <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="-" Grid.Row="3" Grid.Column="2" Clicked="OnMinusClicked" StyleClass="keypad"/>
+                            <Button Text="DecimalToHexadecimal" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+
+                            <!-- Row 4 -->
+                            <Button Text="BinaryToDecimal" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 5 -->
+                            <Button Text="A" Grid.Row="5" Grid.Column="0" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="B" Grid.Row="5" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="C" Grid.Row="5" Grid.Column="2" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="TwoComplementToDecimal" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 6 -->
+                            <Button Text="D" Grid.Row="6" Grid.Column="0" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="E" Grid.Row="6" Grid.Column="1" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="F" Grid.Row="6" Grid.Column="2" Clicked="OnKeypadClicked" StyleClass="keypad"/>
+                            <Button Text="OctalToDecimal" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                            <!-- Row 7 -->
+                            <Button Text="HexadecimalToDecimal" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="2" Clicked="OnFunctionClicked" StyleClass="operation"/>
+
+                        </Grid>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+
+
+</ContentPage>

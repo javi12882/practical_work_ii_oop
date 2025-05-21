@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConversorCalculator.MainPage">
+
+
+             <Grid>
+                <!-- Exit Button -->
+                <Label
+                    Text="Exit"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Margin="10"
+                    TextColor="Black"
+                    FontSize="12">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnExitTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <VerticalStackLayout Padding="20" VerticalOptions="Center">
+                    <Frame Background="#3B5D7A" Padding="20" HasShadow="False">
+                        <Label 
+                            Text="OOP Conversor"
+                            FontSize="24"
+                            HorizontalOptions="Center"
+                            TextColor="White"
+                            FontAttributes="Bold"/>
+                    </Frame>
+
+                    <StackLayout BackgroundColor="#D3D3D3" Padding="20" Spacing="15">
+                        <Label
+                            x:Name ="usernameLabel"
+                            Text ="Username"/>
+
+                        <Entry
+                            x:Name ="usernameEntry"
+                            Placeholder ="Enter your username"
+                            BackgroundColor="White"/>
+
+                        <Label
+                            x:Name ="passwordLabel"
+                            Text ="Introduce tu password" />
+
+                        <Entry
+                            x:Name ="passwordEntry"
+                            Placeholder ="Enter your password" 
+                            IsPassword="True"
+                            BackgroundColor="White"/>
+
+                        <HorizontalStackLayout Spacing="40">
+                            <Label
+                                Text="Create new User"
+                                TextColor="Blue"
+                                FontSize="14"
+                                HorizontalOptions="Start">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnCreateUserTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+
+
+                            <Label
+                                Text="Forgot Password?"
+                                TextColor="Blue"
+                                FontSize="14"
+                                HorizontalOptions="End">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </HorizontalStackLayout>
+                        
+
+                        <Button
+                            Text ="SIGN IN"
+                            Clicked = "OnSignInClicked"/>
+                    </StackLayout>
+                </VerticalStackLayout>
+                
+
+             </Grid>
+
+    
+
+</ContentPage>
