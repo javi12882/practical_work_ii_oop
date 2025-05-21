@@ -1,4 +1,4 @@
-﻿namespace ConversorCalculator;
+namespace ConversorCalculator;
 
 public partial class App : Application
 {
